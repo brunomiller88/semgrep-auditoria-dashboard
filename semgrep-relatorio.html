@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Relatório Semgrep</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    header {
+      padding: 20px 40px;
+      background: linear-gradient(90deg,#6366f1,#22c55e);
+      color: #0f172a;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    main {
+      padding: 30px 40px 60px;
+    }
+    .card {
+      background: #020617;
+      border-radius: 16px;
+      padding: 20px 24px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      border: 1px solid #1e293b;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    th, td {
+      padding: 10px 12px;
+      font-size: 13px;
+      border-bottom: 1px solid #1e293b;
+      vertical-align: top;
+    }
+    th {
+      text-align: left;
+      background: #020617;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    tr:nth-child(even) td {
+      background: #020617;
+    }
+    tr:nth-child(odd) td {
+      background: #020617;
+    }
+    .severity-HIGH { color: #f97373; font-weight: bold; }
+    .severity-MEDIUM { color: #facc15; font-weight: bold; }
+    .severity-LOW { color: #22c55e; font-weight: bold; }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .badge-high { background: rgba(248,113,113,0.15); color: #fecaca; }
+    .badge-medium { background: rgba(250,204,21,0.15); color: #facc15; }
+    .badge-low { background: rgba(34,197,94,0.15); color: #bbf7d0; }
+    code {
+      background: #020617;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #e5e7eb;
+    }
+    .stats {
+      display: flex;
+      gap: 16px;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+    .stat-item {
+      background: #020617;
+      border-radius: 999px;
+      padding: 6px 10px;
+      border: 1px solid #1e293b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Relatório Semgrep</h1>
+    <div class="subtitle">Gerado em 2025-12-10 18:18:53 – achados: 6</div>
+  </header>
+  <main>
+    <div class="card">
+      <div class="stats">
+        <div class="stat-item">Total: 6</div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Severidade</th>
+            <th>Regra</th>
+            <th>Mensagem</th>
+            <th>Arquivo</th>
+            <th>Linha:Coluna</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td>ERROR</td>
+      <td><code>php.lang.security.eval-use.eval-use</code></td>
+      <td>Evaluating non-constant commands. This can lead to command injection.</td>
+      <td>app_add_2fa_erro.php</td>
+      <td>170:17</td>
+    </tr>
+    
+
+    <tr>
+      <td>ERROR</td>
+      <td><code>php.lang.security.eval-use.eval-use</code></td>
+      <td>Evaluating non-constant commands. This can lead to command injection.</td>
+      <td>app_add_2fa_mob_erro.php</td>
+      <td>170:17</td>
+    </tr>
+    
+
+    <tr>
+      <td>WARNING</td>
+      <td><code>php.lang.security.injection.tainted-callable.tainted-callable</code></td>
+      <td>Callable based on user input risks remote code execution.</td>
+      <td>app_add_2fa_mob_sajax.php</td>
+      <td>122:56</td>
+    </tr>
+    
+
+    <tr>
+      <td>WARNING</td>
+      <td><code>php.lang.security.php-permissive-cors.php-permissive-cors</code></td>
+      <td>Access-Control-Allow-Origin response header is set to &quot;*&quot;. This will disable CORS Same Origin Policy restrictions.</td>
+      <td>app_add_2fa_mob_ul_save.php</td>
+      <td>91:1</td>
+    </tr>
+    
+
+    <tr>
+      <td>WARNING</td>
+      <td><code>php.lang.security.injection.tainted-callable.tainted-callable</code></td>
+      <td>Callable based on user input risks remote code execution.</td>
+      <td>app_add_2fa_sajax.php</td>
+      <td>122:56</td>
+    </tr>
+    
+
+    <tr>
+      <td>WARNING</td>
+      <td><code>php.lang.security.php-permissive-cors.php-permissive-cors</code></td>
+      <td>Access-Control-Allow-Origin response header is set to &quot;*&quot;. This will disable CORS Same Origin Policy restrictions.</td>
+      <td>app_add_2fa_ul_save.php</td>
+      <td>91:1</td>
+    </tr>
+    
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
