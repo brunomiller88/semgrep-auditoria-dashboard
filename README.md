@@ -1,4 +1,4 @@
-📄 README.md (COPIE E COLE NO GITHUB)
+📄 README.md 
 # 🔍 Auditoria de Código com Semgrep (SAST) + Dashboard HTML
 
 Este repositório demonstra um fluxo completo de **análise estática de código (SAST)** utilizando **Semgrep**, ferramenta amplamente usada por equipes de **DevSecOps**, **AppSec**, **Segurança da Informação** e **Pentest Interno**.
