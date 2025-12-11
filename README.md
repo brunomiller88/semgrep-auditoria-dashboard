@@ -92,9 +92,6 @@ Isso gera um arquivo JSON com todas as vulnerabilidades detectadas.
 
 Crie o script abaixo dentro do seu ambiente (gera_html_semgrep.py):
 
-[COLOQUE AQUI O SCRIPT COMPLETO QUE EU TE ENTREGUEI]
-
-
 Execute:
 
 python3 gera_html_semgrep.py
