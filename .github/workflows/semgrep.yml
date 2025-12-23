@@ -1,34 +1,29 @@
-name: Semgrep SAST
+name: Semgrep SAST (JSON only)
 
 on:
-  pull_request:
   push:
-    branches: [ "main", "master" ]
-  workflow_dispatch:
+    branches: [ "main" ]
+  pull_request:
 
 jobs:
   semgrep:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout do código
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Instalar Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Instalar Semgrep
+      - name: Install Semgrep
         run: |
-          python -m pip install --upgrade pip
+          python3 -m pip install --upgrade pip
           pip install semgrep
 
-      - name: Rodar Semgrep (JSON)
+      - name: Run Semgrep (JSON output)
         run: |
-          semgrep scan --config auto . --json --output resultados.json || true
+          semgrep scan --config auto . --json --output resultados.json
 
-      - name: Publicar artefato (JSON)
+      - name: Upload Semgrep JSON report
         uses: actions/upload-artifact@v4
         with:
-          name: semgrep-json
+          name: semgrep-json-report
           path: resultados.json
