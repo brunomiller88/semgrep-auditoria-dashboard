@@ -18,23 +18,17 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Instalar Semgrep + dependências (HTML)
+      - name: Instalar Semgrep
         run: |
           python -m pip install --upgrade pip
-          pip install semgrep jinja2 rich pandas
+          pip install semgrep
 
       - name: Rodar Semgrep (JSON)
         run: |
-          semgrep scan --config auto . --json --output resultados.json
+          semgrep scan --config auto . --json --output resultados.json || true
 
-      - name: Gerar HTML (a partir do JSON)
-        run: |
-          python gera_html_semgrep.py
-
-      - name: Publicar artefatos (JSON e HTML)
+      - name: Publicar artefato (JSON)
         uses: actions/upload-artifact@v4
         with:
-          name: semgrep-relatorio
-          path: |
-            resultados.json
-            *.html
+          name: semgrep-json
+          path: resultados.json
